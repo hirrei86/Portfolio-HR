@@ -1,4 +1,6 @@
 .row{
-    background-color: aquamarine;
+    background-color: #074f45;
     padding: 20px;
+    box-shadow: 10px 10px 25px black;
+    color:antiquewhite;
 }

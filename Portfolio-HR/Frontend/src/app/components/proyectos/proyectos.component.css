@@ -1,6 +1,9 @@
 .row{
     padding: 20px;
-    background-color: aquamarine;
+    background-color: #074f45;
+    box-shadow: 10px 10px 25px black;
+    color:antiquewhite;
+
 }
 .contenedor{
     width: auto;
@@ -12,3 +15,4 @@
 .img-recti{
     box-shadow: 10px 10px 25px black;
 }
+

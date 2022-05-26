@@ -1,8 +1,10 @@
 .row{
     padding: 18px;
+    box-shadow: 10px 10px 25px black;
+    color:antiquewhite;
 }
 div{
-    background-color: #89d1e9;
+    background-color: #074f45;
 }
 h1, h3{
     display: inline;

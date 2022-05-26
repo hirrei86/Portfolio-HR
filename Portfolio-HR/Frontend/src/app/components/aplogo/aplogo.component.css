@@ -2,18 +2,24 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    }
+    background-color: black;
+     }
+    
 .redes{
-    margin-right: 0.5em;
+    margin-right: 0.9em;
 }
 .redes img{
-    margin: 0.3em;
+    margin: 0.4em;
 }
 #APlogo{
     width: 150px;
 }
 img{
     width: 40px;
+}
+.btn{
+    border-radius: 2.25rem;
+    margin: 2em;
 }
 
 /*---VISTA CELULAR---*/
@@ -29,4 +35,5 @@ img{
     .redes img{
         margin: 0.3em;
     }
+    
 }
