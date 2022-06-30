@@ -16,7 +16,7 @@
         ><i class="fa fa-pencil"></i>
         </a>
         <a
-        class="btn btn-secondary tooltips"
+        class="btn btn-secondary tooltips" 
         data-placement="top"
         data-toggle="tooltips"
         data-original-title="Delete"
@@ -25,14 +25,13 @@
         </div>
     </div>
 </div>
-<div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
+  <div class="col-xs-12 col-sm-8 col-md-8 col-lg-8">
     <span>
         <h3>Acerca de mi</h3>
         <p id= "acercaDe">{{persona.acercaDe}}
         </p>
-        
-    </span>
-</div>
+      </span>
+  </div>
 </div>
 
 <div class="modal"   id="myModal" tabindex="-1">
@@ -44,27 +43,28 @@
         </div>
         <div class="modal-body">
           <input 
-          type="text" placeholder="Defina su nombre"
+          type="text" placeholder="{{persona.nombre}}"
           name="Nombre y Apellido"
           class="form-control"
           id="nombre"
           />
           <input 
-          type="text" placeholder="Defina su apellido"
+          type="text" placeholder="{{persona.apellido}}"
           name="Nombre y Apellido"
           class="form-control"
           id="nombre"
           />
-          <input 
-          type="text" placeholder="Acerca de usted"
+          
+          <textarea class="text" placeholder="{{persona.acercaDe}}"
           name="Nombre y Apellido"
           class="form-control"
-          id="nombre"
-          />
+          id="nombre"></textarea>
+          
         </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cerrar</button>
-          <button type="button" class="btn btn-primary">Guardar cambios</button>
+          <button class="btn btn-primary">Guardar cambios 
+          </button>
         </div>
       </div>
     </div>
