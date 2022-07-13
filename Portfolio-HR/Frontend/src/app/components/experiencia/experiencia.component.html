@@ -1,23 +1,19 @@
-<div class="row">
-    <h1>Experiencia laboral</h1>
-    <div class="col-lg-11">
-        <ul>
-            <li>
-                <h2>Trabajo 1</h2> - <h3>(años)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda nulla tempora eligendi ea modi, temporibus corporis sapiente reiciendis perspiciatis, animi fugiat perferendis culpa commodi, libero debitis? Ipsum cumque consectetur iusto?</p>
-        </ul>
-        <ul>
-            <li>
-                <h2>Trabajo 2</h2> - <h3>(años)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda nulla tempora eligendi ea modi, temporibus corporis sapiente reiciendis perspiciatis, animi fugiat perferendis culpa commodi, libero debitis? Ipsum cumque consectetur iusto?</p>
-        </ul>
-        <ul>
-            <li>
-                <h2>Trabajo 3</h2> - <h3>(años)</h3>
-            </li>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Assumenda nulla tempora eligendi ea modi, temporibus corporis sapiente reiciendis perspiciatis, animi fugiat perferendis culpa commodi, libero debitis? Ipsum cumque consectetur iusto?</p>
-        </ul>
+<div class="panel-body ">
+    <div class="row">
+        <h1>Experiencia laboral</h1>
+        <div>
+            <ul>
+                <br>
+                <ng-container *ngFor="let Experiencia of experiencias">
+                    <li>
+                        <h2>{{Experiencia.empleo}}</h2>
+                        <h3>({{Experiencia.anioinicio}} - {{Experiencia.aniofinal}})</h3>
+                        <br>
+                        <br>
+                    </li>
+                    <p>{{Experiencia.cargo}}</p>
+                </ng-container>
+            </ul>
+        </div>
     </div>
 </div>

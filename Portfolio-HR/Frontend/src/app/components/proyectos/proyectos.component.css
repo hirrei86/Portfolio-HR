@@ -3,7 +3,7 @@
     background-color: #074f45;
     box-shadow: 10px 10px 25px black;
     color:antiquewhite;
-
+    border-radius: 1em;
 }
 .contenedor{
     width: auto;
@@ -15,4 +15,10 @@
 .img-recti{
     box-shadow: 10px 10px 25px black;
 }
-
+.panel-body {
+    padding: 20px;
+}
+div{
+    background-color: #074f45;
+    }
+    

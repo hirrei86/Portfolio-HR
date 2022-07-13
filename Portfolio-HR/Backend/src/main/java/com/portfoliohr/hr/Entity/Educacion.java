@@ -10,28 +10,25 @@ import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Getter @Setter
 @Entity
-public class Experiencia {
+public class Educacion {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     
     @NotNull
-    @Size(min = 1, max = 500, message = "No cumple con la longitud")
-    private String empleo;
+    @Size(min = 1, max = 50, message = "No cumple con la longitud")
+    private String institucion;
     
     @NotNull
-    @Size(min = 1, max = 500, message = "No cumple con la longitud")
+    @Size(min = 1, max = 50, message = "No cumple con la longitud")
     private String anioinicio;
     
-    @Size(min = 1, max = 500, message = "No cumple con la longitud")
+    @Size(min = 1, max = 50, message = "No cumple con la longitud")
     private String aniofinal;
     
     @Size(min = 1, max = 1000, message = "No cumple con la longitud")
-    private String cargo;
+    private String tituloobtenido;
 
-   
-
-     }
+}

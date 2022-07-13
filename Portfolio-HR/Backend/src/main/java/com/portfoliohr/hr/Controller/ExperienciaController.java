@@ -17,46 +17,46 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class ExperienciaController {
-   @Autowired IExperienciaService iexperienciaService;
-   
-   @GetMapping("experiencias/traer")
-   public List<Experiencia> getExperiencia(){
-       return iexperienciaService.getExperiencia();
-   }
-   
-   @PostMapping("/experiencias/crear")
-   public String createExperiencia(@RequestBody Experiencia experiencia){
-      iexperienciaService.saveExperiencia(experiencia);
-      return "Su experiencia laboral fue creada exitosamente";
-   }
-   
-   @DeleteMapping("/experiencias/borrar/{id}")
-   public String deleteExperiencia(@PathVariable Long id){
-       iexperienciaService.deleteExperiencia(id);
-      return "Su experiencia laboral fue borrada exitosamente";
-   }
-   
-   @PutMapping("/experiencias/editar/{id}")
-   public Experiencia editExperiencia(@PathVariable Long id,
-                              @RequestParam("empleo") String nuevoEmpleo,
-                              @RequestParam("añoinicio") String nuevoAñoinicio,
-                              @RequestParam("añofinal") String nuevoAñofinal,
-                              @RequestParam("cargo") String nuevoCargo){
-       Experiencia experiencia = iexperienciaService.findExperiencia(id);
-       
-       experiencia.setEmpleo(nuevoEmpleo);
-       experiencia.setAñoinicio(nuevoAñoinicio);
-       experiencia.setAñofinal(nuevoAñofinal);
-       experiencia.setCargo(nuevoCargo);
-       
-       iexperienciaService.saveExperiencia(experiencia);
-       return experiencia;
-   }
-   
-   @GetMapping("/experiencias/traer/perfil")
-   public Experiencia findExperiencia(){
-       return iexperienciaService.findExperiencia((long)1);
-   }
+
+    @Autowired
+    IExperienciaService iexperienciaService;
+
+    @GetMapping("experiencias/traer")
+    public List<Experiencia> getExperiencia() {
+        return iexperienciaService.getExperiencia();
+    }
+
+    @PostMapping("/experiencias/crear")
+    public String createExperiencia(@RequestBody Experiencia experiencia) {
+        iexperienciaService.saveExperiencia(experiencia);
+        return "Su experiencia laboral fue creada exitosamente";
+    }
+
+    @DeleteMapping("/experiencias/borrar/{id}")
+    public String deleteExperiencia(@PathVariable Long id) {
+        iexperienciaService.deleteExperiencia(id);
+        return "Su experiencia laboral fue borrada exitosamente";
+    }
+
+    @PutMapping("/experiencias/editar/{id}")
+    public Experiencia editExperiencia(@PathVariable Long id,
+            @RequestParam("empleo") String nuevoEmpleo,
+            @RequestParam("anioinicio") String nuevoAnioinicio,
+            @RequestParam("aniofinal") String nuevoAniofinal,
+            @RequestParam("cargo") String nuevoCargo) {
+        Experiencia experiencia = iexperienciaService.findExperiencia(id);
+
+        experiencia.setEmpleo(nuevoEmpleo);
+        experiencia.setAnioinicio(nuevoAnioinicio);
+        experiencia.setAniofinal(nuevoAniofinal);
+        experiencia.setCargo(nuevoCargo);
+
+        iexperienciaService.saveExperiencia(experiencia);
+        return experiencia;
+    }
+
+    @GetMapping("/experiencias/traer/perfil")
+    public Experiencia findExperiencia() {
+        return iexperienciaService.findExperiencia((long) 1);
+    }
 }
-
-

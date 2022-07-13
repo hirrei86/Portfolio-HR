@@ -1,6 +1,13 @@
 .row{
     background-color: #074f45;
-    padding: 20px;
-    box-shadow: 10px 10px 25px black;
+    padding: 10px;
+    box-shadow: 0px 0px 10px black;
     color:antiquewhite;
+    border-radius: 1em;
+}
+.panel-body {
+    padding: 20px;
+}
+div{
+    background-color: #074f45;
 }
