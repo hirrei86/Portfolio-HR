@@ -71,7 +71,8 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "Portfolio-HR:build:production"
+              "browserTarget": "Portfolio-HR:build:production",
+              "proxyConfig": "proxy.conf.json"
             },
             "development": {
               "browserTarget": "Portfolio-HR:build:development"

@@ -1,14 +1,14 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
-import { educacion } from '../model/estudios.model';
+import { proyecto } from '../model/proyecto.model';
 
 @Injectable({
   providedIn: 'root'
 })
 
-export class EducacionService {
-  URL = 'http://localhost:8080/educaciones/'
+export class ProyectoService {
+  URL = 'http://localhost:8080/proyectos/'
 
   constructor(private http: HttpClient) { }
 

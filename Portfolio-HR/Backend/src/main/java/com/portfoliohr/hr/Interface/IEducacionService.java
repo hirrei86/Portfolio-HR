@@ -1,4 +1,3 @@
-
 package com.portfoliohr.hr.Interface;
 
 import com.portfoliohr.hr.Entity.Educacion;

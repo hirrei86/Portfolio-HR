@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia.model';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
 
@@ -8,20 +9,23 @@ import { ExperienciaService } from 'src/app/service/experiencia.service';
   styleUrls: ['./experiencia.component.css']
 })
 export class ExperienciaComponent implements OnInit {
-  experiencias:any;
-  
-constructor(private datosExperiencias: ExperienciaService) { }
+  experiencias: any;
+
+  constructor(private datosExperiencias: ExperienciaService, private router: Router) { }
 
   ngOnInit(): void {
-    this.datosExperiencias.obtenerDatos().subscribe(data=>{
-      console.log(data);
-      this.experiencias=data;
+    this.datosExperiencias.obtenerDatos().subscribe(data => {
+      this.experiencias = data;
     })
-}
+  }
+
+  public onEdit(id:number){
+    this.router.navigate(['editar-experiencia',id])
+  }
 }
 
-  
-    
+
+
 
 
 

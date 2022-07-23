@@ -11,8 +11,19 @@ export class ExperienciaService {
   URL = 'http://localhost:8080/experiencias/'
 
   constructor(private http: HttpClient) { }
-
+  
   obtenerDatos():Observable<any>{
     return this.http.get(this.URL+'traer');
+  }
+  editarExperiencia(id: number, Experiencia:Experiencia):Observable<object>{
+    return this.http.put(`${this.URL}editar/${id}`,Experiencia);
+  }
+
+  public details(id:number):Observable<Experiencia>{
+    return this.http.get<Experiencia>(`${this.URL}details/${id}`);
+  }
+
+  agregarExperiencia(Experiencia:Experiencia):Observable<object>{
+    return this.http.post(`${this.URL}/crear`,Experiencia);
   }
 }

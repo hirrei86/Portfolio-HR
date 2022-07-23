@@ -1,16 +1,18 @@
 <div class="panel-body ">
     <div class="row">
-    <h1>Estudios realizados</h1>
-    <div class="col-lg-11">
-        <ul>
-            <li>
-                <h2>{{educacion.institucion}}</h2>  
-                <h3>({{educacion.anioinicio}} - {{educacion.aniofinal}})</h3>
+        <h1>Estudios cursados</h1>
+        <div>
+            <ul>
                 <br>
-                <br>
-            </li>
-            <p>{{educacion.tituloobtenido}}</p>
-        </ul>
-    </div>
+                <ng-container *ngFor="let Educacion of estudios">
+                    <li>
+                        <h2>{{Educacion.institucion}}</h2>
+                        <h5>({{Educacion.anioinicio}} - {{Educacion.aniofinal}})</h5>
+                    </li>
+                    <h4>{{Educacion.tituloobtenido}}</h4>
+                    <br>
+                </ng-container>
+            </ul>
+        </div>
     </div>
 </div>

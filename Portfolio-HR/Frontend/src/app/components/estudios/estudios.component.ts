@@ -8,12 +8,13 @@ import { EducacionService } from 'src/app/service/estudios.service';
   styleUrls: ['./estudios.component.css']
 })
 export class EstudiosComponent implements OnInit {
-  educacion: educacion = new educacion("","","","");
-  
-  constructor(public educacionService: EducacionService) { }
-  
+  estudios: any;
+
+  constructor(private datosEstudios: EducacionService) { }
+
   ngOnInit(): void {
-    this.educacionService.getEducacion().subscribe(data => {this.educacion = data})
-    
-}
+    this.datosEstudios.obtenerDatos().subscribe(data => {
+      this.estudios = data;
+    })
+  }
 }

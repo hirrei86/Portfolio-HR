@@ -10,12 +10,14 @@ import { ExperienciaComponent } from './components/experiencia/experiencia.compo
 import { EstudiosComponent } from './components/estudios/estudios.component';
 import { NgCircleProgressModule } from 'ng-circle-progress';
 import { HysskillsComponent } from './components/hysskills/hysskills.component';
-import { ProyectosComponent } from './components/proyectos/proyectos.component';
+import { ProyectoComponent } from './components/proyectos/proyecto.component';
 import { FooterComponent } from './components/footer/footer.component';
 import { HttpClientModule} from '@angular/common/http';
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { EditarExperienciaComponent } from './components/editar-experiencia/editar-experiencia.component';
+
 
 @NgModule({
   declarations: [
@@ -27,17 +29,20 @@ import { ReactiveFormsModule } from '@angular/forms';
     ExperienciaComponent,
     EstudiosComponent,
     HysskillsComponent,
-    ProyectosComponent,
+    ProyectoComponent,
     FooterComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    EditarExperienciaComponent,
+    
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

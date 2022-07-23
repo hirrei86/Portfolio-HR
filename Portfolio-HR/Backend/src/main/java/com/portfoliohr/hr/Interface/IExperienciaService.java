@@ -5,8 +5,7 @@ import java.util.List;
 
 
 public interface IExperienciaService {
-
-    //traer una lista de experiencia
+ //traer una lista de experiencia
     public List<Experiencia> getExperiencia();
 
     //guardar un objeto de tipo Persona

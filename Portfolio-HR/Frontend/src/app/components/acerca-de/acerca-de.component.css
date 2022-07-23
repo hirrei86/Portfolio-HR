@@ -56,3 +56,10 @@ div{
     background-color: #616161;
     margin: 0.4em;
 }
+.modal{
+    border: solid 5px gray;
+    padding: 20px;
+    border-radius: 20px;
+    width: 600px;
+    height: 550px;
+}

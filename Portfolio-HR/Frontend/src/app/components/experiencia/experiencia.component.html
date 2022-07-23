@@ -2,16 +2,26 @@
     <div class="row">
         <h1>Experiencia laboral</h1>
         <div>
+            <a class="button" routerLink="">Agregar Experiencia</a>
+        </div>
+        <div>
             <ul>
                 <br>
                 <ng-container *ngFor="let Experiencia of experiencias">
                     <li>
                         <h2>{{Experiencia.empleo}}</h2>
-                        <h3>({{Experiencia.anioinicio}} - {{Experiencia.aniofinal}})</h3>
-                        <br>
-                        <br>
+                        <h5>({{Experiencia.anioinicio}} - {{Experiencia.aniofinal}})</h5>
                     </li>
-                    <p>{{Experiencia.cargo}}</p>
+                    <h4>{{Experiencia.cargo}}</h4>
+                    <div class="">
+                        <a class="btn bi-pencil-square" id="btn-edit-exp"  routerLink="/editar-experiencia/{{Experiencia.id}}">
+                            <i class="fa fa-pencil"></i>
+                        </a>
+                        <a class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltips"
+                            data-original-title="Delete"><i class="fa fa-times"></i>
+                        </a>
+                    </div>
+                    <br>
                 </ng-container>
             </ul>
         </div>

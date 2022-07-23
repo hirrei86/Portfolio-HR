@@ -17,45 +17,46 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @CrossOrigin(origins = "http://localhost:4200")
 public class EducacionController {
-    @Autowired IEducacionService ieducacionService;
-   
-   @GetMapping("educaciones/traer")
-   public List<Educacion> getEducacion(){
-       return ieducacionService.getEducacion();
-   }
-   
-   @PostMapping("/educaciones/crear")
-   public String createEducacion(@RequestBody Educacion educacion){
-      ieducacionService.saveEducacion(educacion);
-      return "La educacion fue creada exitosamente";
-   }
-   
-   @DeleteMapping("/educaciones/borrar/{id}")
-   public String deleteEducacion(@PathVariable Long id){
-       ieducacionService.deleteEducacion(id);
-      return "La educacion fue borrada exitosamente";
-   }
-   
-   @PutMapping("/educaciones/editar/{id}")
-   public Educacion editEducacion(@PathVariable Long id,
-                              @RequestParam("institucion") String nuevoInstitucion,
-                              @RequestParam("anioinicio") String nuevoAnioinicio,
-                              @RequestParam("aniofinal") String nuevoAniofinal,
-                              @RequestParam("tituloobtenido") String nuevoTituloobtenido){
-       Educacion educacion = ieducacionService.findEducacion(id);
-       
-       educacion.setInstitucion(nuevoInstitucion);
-       educacion.setAnioinicio(nuevoAnioinicio);
-       educacion.setAniofinal(nuevoAniofinal);
-       educacion.setTituloobtenido(nuevoTituloobtenido);
-       
-       ieducacionService.saveEducacion(educacion);
-       return educacion;
-   }
-   
-   @GetMapping("/educaciones/traer/perfil")
-   public Educacion findEducacion(){
-       return ieducacionService.findEducacion((long)1);
-   }
-}
 
+    @Autowired
+    IEducacionService ieducacionService;
+
+    @GetMapping("educaciones/traer")
+    public List<Educacion> getEducacion() {
+        return ieducacionService.getEducacion();
+    }
+
+    @PostMapping("/educaciones/crear")
+    public String createEducacion(@RequestBody Educacion educacion) {
+        ieducacionService.saveEducacion(educacion);
+        return "La educacion fue creada exitosamente";
+    }
+
+    @DeleteMapping("/educaciones/borrar/{id}")
+    public String deleteEducacion(@PathVariable Long id) {
+        ieducacionService.deleteEducacion(id);
+        return "La educacion fue borrada exitosamente";
+    }
+
+    @PutMapping("/educaciones/editar/{id}")
+    public Educacion editEducacion(@PathVariable Long id,
+            @RequestParam("institucion") String nuevoInstitucion,
+            @RequestParam("anioinicio") String nuevoAnioinicio,
+            @RequestParam("aniofinal") String nuevoAniofinal,
+            @RequestParam("tituloobtenido") String nuevoTituloobtenido) {
+        Educacion educacion = ieducacionService.findEducacion(id);
+
+        educacion.setInstitucion(nuevoInstitucion);
+        educacion.setAnioinicio(nuevoAnioinicio);
+        educacion.setAniofinal(nuevoAniofinal);
+        educacion.setTituloobtenido(nuevoTituloobtenido);
+
+        ieducacionService.saveEducacion(educacion);
+        return educacion;
+    }
+
+    @GetMapping("/educaciones/traer/perfil")
+    public Educacion findEducacion() {
+        return ieducacionService.findEducacion((long) 1);
+    }
+}
