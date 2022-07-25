@@ -11,18 +11,25 @@ import { ExperienciaService } from 'src/app/service/experiencia.service';
 export class ExperienciaComponent implements OnInit {
   experiencias: any;
 
-  constructor(private datosExperiencias: ExperienciaService, private router: Router) { }
+  constructor(private datosExperiencias: ExperienciaService, private experienciaservice: ExperienciaService, private router: Router) { }
 
   ngOnInit(): void {
     this.datosExperiencias.obtenerDatos().subscribe(data => {
       this.experiencias = data;
     })
   }
-
   public onEdit(id:number){
     this.router.navigate(['editar-experiencia',id])
   }
+  
+
+  log_console(id:number) {
+    this.experienciaservice.eliminarExperiencia(id).subscribe(data => {
+      });
+      location.reload();
+      }
 }
+
 
 
 

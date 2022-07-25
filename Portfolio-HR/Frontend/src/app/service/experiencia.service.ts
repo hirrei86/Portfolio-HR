@@ -23,7 +23,11 @@ export class ExperienciaService {
     return this.http.get<Experiencia>(`${this.URL}details/${id}`);
   }
 
-  agregarExperiencia(Experiencia:Experiencia):Observable<object>{
-    return this.http.post(`${this.URL}/crear`,Experiencia);
+  agregarExperiencia(experiencia:Experiencia):Observable<object>{
+    return this.http.post(`${this.URL}crear`,experiencia);
+  }
+
+  eliminarExperiencia(id: number): Observable<object>{
+    return this.http.delete(`${this.URL}borrar/${id}`)
   }
 }

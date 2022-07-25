@@ -17,6 +17,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarExperienciaComponent } from './components/editar-experiencia/editar-experiencia.component';
+import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
 
 
 @NgModule({
@@ -34,8 +35,9 @@ import { EditarExperienciaComponent } from './components/editar-experiencia/edit
     HomeComponent,
     LoginComponent,
     EditarExperienciaComponent,
+    NewExperienciaComponent,
+    ],
     
-  ],
   imports: [
     BrowserModule,
     AppRoutingModule,

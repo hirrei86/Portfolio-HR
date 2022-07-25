@@ -25,6 +25,7 @@ export class EditarExperienciaComponent implements OnInit {
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
     this.experienciaservice.editarExperiencia(id, this.editExp).subscribe(data => {
+      alert("Experiencia editada correctamente")
       this.router.navigate(['home']);
     }
     )

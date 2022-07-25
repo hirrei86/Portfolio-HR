@@ -2,7 +2,7 @@
     <div class="row">
         <h1>Experiencia laboral</h1>
         <div>
-            <a class="button" routerLink="">Agregar Experiencia</a>
+            <a class="button" routerLink="/newexp">Agregar Experiencia</a>
         </div>
         <div>
             <ul>
@@ -17,9 +17,10 @@
                         <a class="btn bi-pencil-square" id="btn-edit-exp"  routerLink="/editar-experiencia/{{Experiencia.id}}">
                             <i class="fa fa-pencil"></i>
                         </a>
-                        <a class="btn btn-secondary tooltips" data-placement="top" data-toggle="tooltips"
-                            data-original-title="Delete"><i class="fa fa-times"></i>
-                        </a>
+                        
+                        <button (click)="log_console(Experiencia.id)" class="btn btn-info">
+                            X
+                        </button>
                     </div>
                     <br>
                 </ng-container>
@@ -27,3 +28,4 @@
         </div>
     </div>
 </div>
+
