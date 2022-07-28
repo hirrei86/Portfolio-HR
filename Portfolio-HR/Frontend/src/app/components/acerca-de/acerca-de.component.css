@@ -52,8 +52,8 @@ div{
     border-color: #6c757d;
 }
 .bi-pencil-square {
-    color: #f9fafb;
-    background-color: #616161;
+    color: #000000;
+    background-color: #45e081;
     margin: 0.4em;
 }
 .modal{
@@ -62,4 +62,11 @@ div{
     border-radius: 20px;
     width: 600px;
     height: 550px;
+}
+
+.button{
+    color: #fcfcfc;
+    background-color: #d60000;
+    margin: 0.2em;
+    width: 42px;
 }

@@ -20,7 +20,9 @@
 }
 
 .panel-body {
-    padding: 20px;
+    padding: 15px;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 
 div {
@@ -35,4 +37,27 @@ img{
     width: 300px;
     height: 150px;
     border-radius: 10px;
+}.button{
+    background-color: #45e081; /* Green */
+  border: none;
+  color: rgb(0, 0, 0);
+  padding: 10px 13px;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 20px;
+  box-shadow: 0 0 10px rgb(49, 49, 49);
+  border-radius: 15px;
+  margin: 0.8em;
+  }
+  .bi-pencil-square {
+    color: #000000;
+    background-color: #45e081;
+    margin: 0.4em;
+}
+button{
+    color: #fcfcfc;
+    background-color: #d60000;
+    margin: 0.2em;
+    width: 42px;
+
 }

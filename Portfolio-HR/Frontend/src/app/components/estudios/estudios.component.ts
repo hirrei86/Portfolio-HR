@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { educacion } from 'src/app/model/estudios.model';
+import { Router } from '@angular/router';
 import { EducacionService } from 'src/app/service/estudios.service';
 
 @Component({
@@ -10,11 +10,22 @@ import { EducacionService } from 'src/app/service/estudios.service';
 export class EstudiosComponent implements OnInit {
   estudios: any;
 
-  constructor(private datosEstudios: EducacionService) { }
+  constructor(private datosEstudios: EducacionService,private educacionservice: EducacionService, private router: Router) { }
 
   ngOnInit(): void {
     this.datosEstudios.obtenerDatos().subscribe(data => {
       this.estudios = data;
     })
   }
+
+  public onEdit(id:number){
+    this.router.navigate(['editar-educacion',id])
+  }
+  
+
+  eliminar_educacion(id:number) {
+    this.educacionservice.eliminarEducacion(id).subscribe(data => {
+      });
+      location.reload();
+      }
 }

@@ -1,6 +1,5 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
-import { Experiencia } from 'src/app/model/experiencia.model';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
 
 @Component({
@@ -23,7 +22,7 @@ export class ExperienciaComponent implements OnInit {
   }
   
 
-  log_console(id:number) {
+  eliminar_experiencia(id:number) {
     this.experienciaservice.eliminarExperiencia(id).subscribe(data => {
       });
       location.reload();

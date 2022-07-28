@@ -1,5 +1,4 @@
 import { Component, OnInit } from '@angular/core';
-import { NgForm } from '@angular/forms';
 import { Router } from '@angular/router';
 import { Experiencia } from 'src/app/model/experiencia.model';
 import { ExperienciaService } from 'src/app/service/experiencia.service';
@@ -20,7 +19,6 @@ export class NewExperienciaComponent implements OnInit {
   crearExperiencia(){
     this.experienciaservice.agregarExperiencia(this.experiencia).subscribe(dato =>{
       console.log(dato);
-      
     },error => console.log(error));
   }
   irAInicio(){

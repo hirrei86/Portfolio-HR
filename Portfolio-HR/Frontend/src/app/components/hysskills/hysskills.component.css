@@ -6,7 +6,9 @@
     border-radius: 1em;
 }
 .panel-body {
-    padding: 20px;
+    padding: 15px;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 div{
     background-color: #074f45;

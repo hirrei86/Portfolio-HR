@@ -10,7 +10,6 @@ import javax.validation.constraints.Size;
 import lombok.Getter;
 import lombok.Setter;
 
-
 @Getter @Setter
 @Entity
 public class Proyecto {
@@ -28,6 +27,17 @@ public class Proyecto {
     
     @Size(min = 1, max = 3000, message = "No cumple con la longitud")
     private String imgproyecto;
+    
+    public Proyecto(){
+        
+    }
+    public Proyecto(long id, String nombreproyecto, String descripcionproyecto, String imgproyecto){
+       
+        this.id = id;
+        this.nombreproyecto = nombreproyecto;
+        this.descripcionproyecto = descripcionproyecto;
+        this.imgproyecto = imgproyecto;
+    }
     
     
      }

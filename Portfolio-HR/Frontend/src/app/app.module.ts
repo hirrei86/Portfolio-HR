@@ -18,6 +18,13 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditarExperienciaComponent } from './components/editar-experiencia/editar-experiencia.component';
 import { NewExperienciaComponent } from './components/experiencia/new-experiencia.component';
+import { EditarAcercaDeComponent } from './components/editar-acerca-de/editar-acerca-de.component';
+import { EditarPortadaComponent } from './components/editar-portada/editar-portada.component';
+import { NewEstudiosComponent } from './components/estudios/new-estudios.component';
+import { EditarEstudiosComponent } from './components/editar-estudios/editar-estudios.component';
+import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
+import { EditarProyectoComponent } from './components/editar-proyecto/editar-proyecto.component';
+
 
 
 @NgModule({
@@ -36,6 +43,13 @@ import { NewExperienciaComponent } from './components/experiencia/new-experienci
     LoginComponent,
     EditarExperienciaComponent,
     NewExperienciaComponent,
+    EditarAcercaDeComponent,
+    EditarPortadaComponent,
+    NewEstudiosComponent,
+    EditarEstudiosComponent,
+    NewProyectoComponent,
+    EditarProyectoComponent,
+    
     ],
     
   imports: [

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { persona } from 'src/app/model/persona.model';
+import { Router } from '@angular/router';
 import { PersonaService } from 'src/app/service/persona.service';
 
 @Component({
@@ -8,15 +8,24 @@ import { PersonaService } from 'src/app/service/persona.service';
   styleUrls: ['./acerca-de.component.css']
 })
 export class AcercaDeComponent implements OnInit {
-  persona: persona = new persona("","","","");
-  public editPersona: persona | undefined
-  
-  constructor(public personaService: PersonaService) { }
+  personas: any
+  constructor(private datosPersona: PersonaService, private personaservice: PersonaService, private router: Router) { }
   
   ngOnInit(): void {
-    this.personaService.getPersona().subscribe(data => {this.persona = data})
-}
+    this.datosPersona.obtenerDatos().subscribe(data => {
+      this.personas = data;
+    })
+  }
+  public onEdit(id:number){
+    this.router.navigate(['editar-persona',id])
+  }
+  
 
+  eliminar_persona(id:number) {
+    this.personaservice.eliminarPersona(id).subscribe(data => {
+      });
+      location.reload();
+      }
 }
 
 

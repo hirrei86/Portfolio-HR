@@ -30,5 +30,17 @@ public class Educacion {
     
     @Size(min = 1, max = 1000, message = "No cumple con la longitud")
     private String tituloobtenido;
+    
+    public Educacion(){
+        
+    }
+    public Educacion(long id, String institucion, String anioinicio, String aniofinal, String tituloobtenido){
+       
+        this.id = id;
+        this.institucion = institucion;
+        this.anioinicio = anioinicio;
+        this.aniofinal = aniofinal;
+        this.tituloobtenido = tituloobtenido;
+    }
 
 }

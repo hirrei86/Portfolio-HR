@@ -4,6 +4,7 @@ import com.portfoliohr.hr.Entity.Educacion;
 import com.portfoliohr.hr.Interface.IEducacionService;
 import java.util.List;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -11,7 +12,6 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
@@ -39,24 +39,26 @@ public class EducacionController {
     }
 
     @PutMapping("/educaciones/editar/{id}")
-    public Educacion editEducacion(@PathVariable Long id,
-            @RequestParam("institucion") String nuevoInstitucion,
-            @RequestParam("anioinicio") String nuevoAnioinicio,
-            @RequestParam("aniofinal") String nuevoAniofinal,
-            @RequestParam("tituloobtenido") String nuevoTituloobtenido) {
-        Educacion educacion = ieducacionService.findEducacion(id);
+    public ResponseEntity<Educacion> editEducacion(@PathVariable Long id,
+            @RequestBody Educacion e) {
+        Educacion nuevaEdu = ieducacionService.findEducacion(id);
 
-        educacion.setInstitucion(nuevoInstitucion);
-        educacion.setAnioinicio(nuevoAnioinicio);
-        educacion.setAniofinal(nuevoAniofinal);
-        educacion.setTituloobtenido(nuevoTituloobtenido);
+        nuevaEdu.setInstitucion(e.getInstitucion());
+        nuevaEdu.setAnioinicio(e.getAnioinicio());
+        nuevaEdu.setAniofinal(e.getAniofinal());
+        nuevaEdu.setTituloobtenido(e.getTituloobtenido());
 
-        ieducacionService.saveEducacion(educacion);
-        return educacion;
+        ieducacionService.saveEducacion(nuevaEdu);
+        return ResponseEntity.ok(nuevaEdu);
     }
 
     @GetMapping("/educaciones/traer/perfil")
-    public Educacion findEducacion() {
+    public Educacion findExperiencia() {
         return ieducacionService.findEducacion((long) 1);
+    }
+    
+    @GetMapping("/educaciones/details/{id}")
+    public Educacion findEducacion(@PathVariable Long id) {
+        return ieducacionService.findEducacion(id);
     }
 }

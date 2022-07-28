@@ -21,7 +21,6 @@ export class EditarExperienciaComponent implements OnInit {
       })
       }
 
-
   onUpdate(): void {
     const id = this.activatedRoute.snapshot.params['id'];
     this.experienciaservice.editarExperiencia(id, this.editExp).subscribe(data => {
@@ -29,5 +28,5 @@ export class EditarExperienciaComponent implements OnInit {
       this.router.navigate(['home']);
     }
     )
-  
-  }}
+  }
+}

@@ -25,10 +25,24 @@ public class Persona {
     @Size(min = 1, max = 50, message = "No cumple con la longitud")
     private String apellido;
     
-    @Size(min = 1, max = 50, message = "No cumple con la longitud")
-    private String img;
+    @Size(min = 1, max = 1000, message = "No cumple con la longitud")
+    private String imgperfil;
     
     @Size(min = 1, max = 1000, message = "No cumple con la longitud")
     private String acercaDe;
+    
+    public Persona(){
+        
+    }
+    public Persona(long id, String nombre, String apellido, String imgperfil, String acercaDe){
+       
+        this.id = id;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.imgperfil = imgperfil;
+        this.acercaDe = acercaDe;
+    }
+    
+    }
 
-     }
+     
