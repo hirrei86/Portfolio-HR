@@ -1,7 +1,7 @@
 <div class="panel-body ">
     <div class="row">
         <h1>Estudios cursados</h1>
-        <div>
+        <div *ngIf="userLogged |async as user">
             <a class="button" routerLink="/newest">Agregar Estudios</a>
         </div>
         <div>
@@ -13,7 +13,7 @@
                         <h5>({{Educacion.anioinicio}} - {{Educacion.aniofinal}})</h5>
                     </li>
                     <h4>{{Educacion.tituloobtenido}}</h4>
-                    <div class="">
+                    <div *ngIf="userLogged |async as user">
                         <a class="btn bi-pencil-square" id="btn-edit-exp"  routerLink="/editar-educacion/{{Educacion.id}}">
                             <i class="fa fa-pencil"></i>
                         </a>

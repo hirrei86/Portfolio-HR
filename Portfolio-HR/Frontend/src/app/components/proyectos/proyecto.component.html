@@ -1,7 +1,7 @@
 <div class="panel-body ">
         <div class="row">
                 <h1>Proyectos realizados</h1>
-                <div>
+                <div *ngIf="userLogged |async as user">
                         <a class="button" routerLink="/newpro">Agregar Proyecto</a>
                 </div>
                 <div>
@@ -21,7 +21,7 @@
                                                 <img class="image" [src]="Proyecto.imgproyecto"
                                                         class="img-fluid img-recti" />
                                         </div>
-                                        <div class="">
+                                        <div *ngIf="userLogged |async as user">
                                                 <a class="btn bi-pencil-square" id="btn-edit-exp"
                                                         routerLink="/editar-proyecto/{{Proyecto.id}}">
                                                         <i class="fa fa-pencil"></i>

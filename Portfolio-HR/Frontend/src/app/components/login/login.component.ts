@@ -24,11 +24,11 @@ export class LoginComponent implements OnInit {
     const { email, password } = this.usuario;
     this.authService.login(email, password).then(user => {
       console.log("Bienvenido ", user);
+      this.router.navigate(['/home'])
       if(!user) {
         alert("Datos incorrectos, si no tenes cuenta registrate!");
         return;
       };
-      this.router.navigate(['/home'])
     }).catch(err=>{
       console.log(err)
     })

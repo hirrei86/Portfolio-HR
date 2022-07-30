@@ -1,7 +1,7 @@
 <div class="panel-body ">
     <div class="row">
         <h1>Experiencia laboral</h1>
-        <div>
+        <div *ngIf="userLogged |async as user">
             <a class="button" routerLink="/newexp">Agregar Experiencia</a>
         </div>
         <div>
@@ -13,7 +13,7 @@
                         <h5>({{Experiencia.anioinicio}} - {{Experiencia.aniofinal}})</h5>
                     </li>
                     <h4>{{Experiencia.cargo}}</h4>
-                    <div class="">
+                    <div *ngIf="userLogged |async as user">
                         <a class="btn bi-pencil-square" id="btn-edit-exp"  routerLink="/editar-experiencia/{{Experiencia.id}}">
                             <i class="fa fa-pencil"></i>
                         </a>

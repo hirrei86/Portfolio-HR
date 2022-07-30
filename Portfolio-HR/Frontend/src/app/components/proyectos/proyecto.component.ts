@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
 import { ProyectoService } from 'src/app/service/proyecto.service';
 
 @Component({
@@ -10,7 +11,7 @@ import { ProyectoService } from 'src/app/service/proyecto.service';
 export class ProyectoComponent implements OnInit {
   proyectos: any;
 
-  constructor(private datosProyectos: ProyectoService, private proyectoservice: ProyectoService, private router: Router) { }
+  constructor(private datosProyectos: ProyectoService, private proyectoservice: ProyectoService, private router: Router,private authService: AuthService) { }
 
   ngOnInit(): void {
     this.datosProyectos.obtenerDatos().subscribe(data => {
@@ -27,4 +28,5 @@ export class ProyectoComponent implements OnInit {
       });
       location.reload();
       }
+      userLogged = this.authService.getUserLogged();
 }

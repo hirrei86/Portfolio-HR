@@ -11,6 +11,7 @@ import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
 import { RegisterComponent } from './components/register/register.component';
+import { canActivate, redirectUnauthorizedTo } from '@angular/fire/auth-guard';
 
 
 const routes: Routes = [
@@ -20,7 +21,7 @@ const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
   {path:'editar-experiencia/:id', component: EditarExperienciaComponent},
   {path:'newexp', component: NewExperienciaComponent},
-  {path:'editar-acerca-de/:id', component: EditarAcercaDeComponent},
+  {path:'editar-acerca-de/:id', component: EditarAcercaDeComponent, ...canActivate(() => redirectUnauthorizedTo(['/login']))},
   {path:'editar-portada/:id', component: EditarPortadaComponent},
   {path:'newest', component: NewEstudiosComponent},
   {path:'editar-educacion/:id', component: EditarEstudiosComponent},
