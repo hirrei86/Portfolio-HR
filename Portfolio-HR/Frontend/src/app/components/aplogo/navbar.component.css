@@ -1,0 +1,9 @@
+.bg-light {
+    --bs-bg-opacity: 0;
+   }
+
+   .btn-primary{
+    color: #000000;
+    background-color: #45e081;
+    margin: 0.4em;
+   }

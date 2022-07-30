@@ -24,6 +24,13 @@ import { NewEstudiosComponent } from './components/estudios/new-estudios.compone
 import { EditarEstudiosComponent } from './components/editar-estudios/editar-estudios.component';
 import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
 import { EditarProyectoComponent } from './components/editar-proyecto/editar-proyecto.component';
+import { RegisterComponent } from './components/register/register.component';
+import { AngularFireModule } from '@angular/fire/compat';
+import { environment } from 'src/environments/environment';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { NavbarComponent } from './components/aplogo/navbar.component';
+
+
 
 
 
@@ -49,6 +56,8 @@ import { EditarProyectoComponent } from './components/editar-proyecto/editar-pro
     EditarEstudiosComponent,
     NewProyectoComponent,
     EditarProyectoComponent,
+    RegisterComponent,
+    NavbarComponent,
     
     ],
     
@@ -58,7 +67,11 @@ import { EditarProyectoComponent } from './components/editar-proyecto/editar-pro
     NgCircleProgressModule.forRoot({}),
     HttpClientModule,
     ReactiveFormsModule,
-    FormsModule
+    FormsModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    BrowserAnimationsModule,
+    
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

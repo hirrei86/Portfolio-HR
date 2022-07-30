@@ -11,10 +11,10 @@ div{
     @media (min-width:575px){
 #fotoperfil{
     position: absolute;
-    width: 15%;
+    width: 12%;
     border-radius: 100%;
     box-shadow: 3px 3px 3px grey;
-    left: 3%;
+    left: 6%;
     top: 500px;
 }
 }
@@ -22,11 +22,11 @@ div{
 @media (max-width:575px){
     #fotoperfil{
         position: absolute;
-        width: 30%;
+        width: 20%;
         border-radius: 100%;
         box-shadow: 3px 3px 3px grey;
-        left: 33%;
-        top: 590px;
+        left: 39%;
+        top: 650px;
     }
 }
 @media (max-width:575px){
@@ -55,13 +55,6 @@ div{
     color: #000000;
     background-color: #45e081;
     margin: 0.4em;
-}
-.modal{
-    border: solid 5px gray;
-    padding: 20px;
-    border-radius: 20px;
-    width: 600px;
-    height: 550px;
 }
 
 .button{

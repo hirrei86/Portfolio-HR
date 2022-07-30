@@ -10,10 +10,13 @@ import { NewExperienciaComponent } from './components/experiencia/new-experienci
 import { HomeComponent } from './components/home/home.component';
 import { LoginComponent } from './components/login/login.component';
 import { NewProyectoComponent } from './components/proyectos/new-proyecto.component';
+import { RegisterComponent } from './components/register/register.component';
+
 
 const routes: Routes = [
   {path:'home', component: HomeComponent},
   {path:'login', component: LoginComponent},
+  {path:'register', component: RegisterComponent},
   {path:'', redirectTo:'login', pathMatch:'full'},
   {path:'editar-experiencia/:id', component: EditarExperienciaComponent},
   {path:'newexp', component: NewExperienciaComponent},
@@ -22,7 +25,8 @@ const routes: Routes = [
   {path:'newest', component: NewEstudiosComponent},
   {path:'editar-educacion/:id', component: EditarEstudiosComponent},
   {path:'newpro', component: NewProyectoComponent},
-  {path:'editar-proyecto/:id', component: EditarProyectoComponent}
+  {path:'editar-proyecto/:id', component: EditarProyectoComponent},
+  
   ];
 
 @NgModule({

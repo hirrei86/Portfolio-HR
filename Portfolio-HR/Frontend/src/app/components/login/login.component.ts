@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { Router } from '@angular/router';
+import { AuthService } from 'src/app/service/auth.service';
+
 
 @Component({
   selector: 'app-login',
@@ -7,36 +9,30 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  form:FormGroup;
-  constructor(private formbuilder:FormBuilder) { 
-    this.form=this.formbuilder.group(
-      {
-        email:['',[Validators.required,Validators.email]],
-        password:['',[Validators.required,Validators.minLength(8)]],
-        deviceInfo:this.formbuilder.group({
-          deviceId: ["17867868768"],
-          deviceType: ["DEVICE_TYPE_ANDROID"],
-          notificationToken: ["67657575eececc34"]
-        })
-      }
-    )
+  usuario = {
+    email: '',
+    password: '',
   }
 
-  ngOnInit(): void {
+  ngOnInit() {
+ 
   }
 
-  get Email()
-  {
-    return this.form.get('email');
-  }
+  constructor(private authService: AuthService, private router: Router) { }
 
-  get Password()
-  {
-    return this.form.get('password');
+  Ingresar() {
+    const { email, password } = this.usuario;
+    this.authService.login(email, password).then(user => {
+      console.log("Bienvenido ", user);
+      if(!user) {
+        alert("Datos incorrectos, si no tenes cuenta registrate!");
+        return;
+      };
+      this.router.navigate(['/home'])
+    }).catch(err=>{
+      console.log(err)
+    })
   }
 }
 
-
-
-
-
+ 
