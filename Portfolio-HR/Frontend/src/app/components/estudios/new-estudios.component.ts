@@ -27,6 +27,7 @@ export class NewEstudiosComponent implements OnInit {
   }
   onCreate(): void{
     this.crearEducacion();
+    alert("Se estudio fue agregado correctamente")
     this.irAInicio();
       }
     

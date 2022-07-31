@@ -27,6 +27,7 @@ export class NewProyectoComponent implements OnInit {
   }
   onCreate(): void{
     this.crearProyecto();
+    alert("Su proyecto fue agregado correctamente")
     this.irAInicio();
       }
     
