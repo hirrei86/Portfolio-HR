@@ -1,5 +1,5 @@
 img{
-    width: 1350px;
+    width: 1350vh;
     height: 500px
 }
 .bi-pencil-square {
@@ -8,7 +8,7 @@ img{
     background-color: #000000;
     margin: 0.4em;
     position: absolute;
-    top: 80%;
+    top: 50%;
     left: 90%;
     box-shadow: 0px 0px 25px rgb(48, 85, 139);
     display: flex;

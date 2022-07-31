@@ -21,7 +21,7 @@ const routes: Routes = [
   {path:'', redirectTo:'login', pathMatch:'full'},
   {path:'editar-experiencia/:id', component: EditarExperienciaComponent},
   {path:'newexp', component: NewExperienciaComponent},
-  {path:'editar-acerca-de/:id', component: EditarAcercaDeComponent, ...canActivate(() => redirectUnauthorizedTo(['/login']))},
+  {path:'editar-acerca-de/:id', component: EditarAcercaDeComponent},
   {path:'editar-portada/:id', component: EditarPortadaComponent},
   {path:'newest', component: NewEstudiosComponent},
   {path:'editar-educacion/:id', component: EditarEstudiosComponent},
