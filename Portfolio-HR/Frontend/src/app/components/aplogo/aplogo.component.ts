@@ -15,6 +15,7 @@ export class AplogoComponent implements OnInit {
   logout() {
     this.authService.logout();
   }
+  userLogged = this.authService.getUserLogged();
 }
 
 

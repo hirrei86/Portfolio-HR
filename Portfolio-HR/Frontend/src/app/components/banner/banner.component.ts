@@ -16,7 +16,8 @@ export class BannerComponent implements OnInit {
       this.portada = data;
     })
   }
-  userLogged = this.authService.getUserLogged();
+  userLogged = this.authService.getUserLogged() 
+    
 }
 
 
